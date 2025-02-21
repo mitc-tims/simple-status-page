@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What the Crew Do: Status Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .platform-status {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .platform {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            justify-content: space-between;
+        }
+        .platform img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .status-indicator {
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        .operational { background-color: #4caf50; color: white; }
+        .degraded { background-color: #ff9800; color: white; }
+        .down { background-color: #f44336; color: white; }
+        .ticket-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .ticket-table th, .ticket-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .priority-p1 { background-color: #f44336; color: white; }
+        .priority-p2 { background-color: #ff9800; color: white; }
+        .priority-p3 { background-color: #ffff00; color: black; }
+        .platform-name {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+                    <img src="https://static.wixstatic.com/media/48af29_ccae7e446d27475e839cd9e9accabb59~mv1.png/v1/fill/w_228,h_49,al_c,lg_1,q_85,enc_avif,quality_auto/48af29_ccae7e446d27475e839cd9e9accabb59~mv1.png" style="max-width:256px;padding:25px;float:right;"> 
+  <div class="container">
+      <h1>Status Board</h1>
+        
+        <div class="section">
+          <h2>The Water is currently: <b><i>fine</b></i></h2>
+            <div class="platform-status">
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/office.png" alt="Office 365">
+                        <span>Office 365</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/msaccess.png" alt="SalesForce">
+                        <span>SalesForce</span>
+                    </div>
+                    <span class="status-indicator degraded">Degraded</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/network-idle.png" alt="Azure">
+                        <span>Azure</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/network-idle.png" alt="AWS">
+                        <span>AWS</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/gnome-power-manager.png" alt="SAP">
+                        <span>SAP</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/linkedin.png" alt="Oracle">
+                        <span>Oracle</span>
+                    </div>
+                    <span class="status-indicator degraded">Degraded</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/user-trash-full.png" alt="Teams">
+                        <span>Teams</span>
+                    </div>
+                    <span class="status-indicator degraded">Always Terrible</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/evolution.png" alt="Zoom">
+                        <span>Zoom</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/aol-messenger.png" alt="Slack">
+                        <span>Slack</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/evolution.png" alt="Google Workspace">
+                        <span>Google Workspace</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/internet-mail.png" alt="HubSpot">
+                        <span>HubSpot</span>
+                    </div>
+                    <span class="status-indicator down">Down</span>
+                </div>
+                <div class="platform">
+                    <div class="platform-name">
+                        <img src="https://timnetworks.org/desktop/res/icons/folder-publicshare.png" alt="ConnectWise">
+                      <span>ConnectWise</span>
+                    </div>
+                    <span class="status-indicator operational">Operational</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Crewtical Support Tickets</h2>
+            <table class="ticket-table">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Priority</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CW-12345</td>
+                        <td><span class="priority-p1">P1</span></td>
+                        <td>Switch offline at Sunset Park Daycare // Agent ID:12345</td>
+                        <td>In Progress</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12346</td>
+                        <td><span class="priority-p2">P2</span></td>
+                        <td>Office365 Logins issue for multiple users // ID:12345</td>
+                        <td>Investigating</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12347</td>
+                        <td><span class="priority-p1">P1</span></td>
+                        <td>DBQSRV error - workstation offline error // Agent ID:12345</td>
+                        <td>Urgent</td>
+                        <td>Projects Team</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12348</td>
+                        <td><span class="priority-p3">P3</span></td>
+                        <td>Teams chats delayed by seventeen seconds</td>
+                        <td>In Progress</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12349</td>
+                        <td><span class="priority-p1">P1</span></td>
+                        <td>SW009 offline since: 10:52AM</td>
+                        <td>Critical</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12350</td>
+                        <td><span class="priority-p2">P2</span></td>
+                        <td>Azure authentication slowdowns</td>
+                        <td>Monitoring</td>
+                        <td>Project Team</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12351</td>
+                        <td><span class="priority-p1">P1</span></td>
+                        <td>Nilear not responding // Agent ID:12345</td>
+                        <td>Urgent</td>
+                        <td>Internal</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12352</td>
+                        <td><span class="priority-p3">P3</span></td>
+                        <td>Slack message synchronization issues</td>
+                        <td>Investigating</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12353</td>
+                        <td><span class="priority-p1">P1</span></td>
+                        <td>Office 365 email delivery failures // ID:12345</td>
+                        <td>Critical</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12354</td>
+                        <td><span class="priority-p2">P2</span></td>
+                        <td>SAP reporting module errors // ID:12345</td>
+                        <td>In Progress</td>
+                        <td>Project Team</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12355</td>
+                        <td><span class="priority-p2">P2</span></td>
+                        <td>Yeled app - CPSE is kicking users out // ID:12345</td>
+                        <td>Investigating</td>
+                        <td>tim probably</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12356</td>
+                        <td><span class="priority-p3">P3</span></td>
+                        <td>Zoom client connectivity problems in upstairs office // ID:12345</td>
+                        <td>Investigating</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12357</td>
+                        <td><span class="priority-p1">P1</span></td>
+                        <td>Critical API integration failure</td>
+                        <td>Critical</td>
+                        <td>Project Team</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12358</td>
+                        <td><span class="priority-p2">P2</span></td>
+                        <td>Performance monitoring system alerts</td>
+                        <td>In Progress</td>
+                        <td>Internal</td>
+                    </tr>
+                    <tr>
+                        <td>CW-12359</td>
+                        <td><span class="priority-p1">P1</span></td>
+                        <td>Investigate network segmentation issue</td>
+                        <td>In Progress</td>
+                        <td>Service Delivery</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Company Updates</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="width: 25%;">
+                    <h3>Upcoming Events</h3>
+                    <ul>
+                        <li>Quarterly Company Meeting - March 15</li>
+                        <li>Tech Talk Series - Mar 21</li>
+                        <li>Everyone can stay at home day - Apr 1</li>
+                        <li>Cybersecurity Workshop - June 12</li>
+                    </ul>
+                </div>
+                <div style="width: 65%;">
+                    <h3>Recent Incidents</h3>
+                    <ul>
+                        <li>CW-123456 CorrugatedCo - lost 4 switches to flooding</li>
+                        <li>CW-123434 Fancy Floorcleaners - QB needs updates</li>
+                        <li>CW=123456 Citywide Tiles - Showroom construction, computers moved</li>
+                        <li>CW-123456 Yelling Vedic Elders - remote desktops swapped out again</li>
+                        <li>CW-123456 Trinity Health Multiservices - onboarding finished, client is <b>LIVE</b></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
